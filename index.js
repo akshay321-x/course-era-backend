@@ -1,6 +1,8 @@
 const express = require("express");
 const mongoose = require("mongoose");
-
+app.get("/", (req, res) => {
+  res.send("Server is running successfully 🚀");
+});
 const { userRouter } = require("./routes/user");
 const { adminRouter } = require("./routes/admin");
 const { courseRouter } = require("./routes/course");
