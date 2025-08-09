@@ -1,15 +1,14 @@
 const express = require("express");
 const mongoose = require("mongoose");
-app.get("/", (req, res) => {
-  res.send("Server is running successfully 🚀");
-});
 const { userRouter } = require("./routes/user");
 const { adminRouter } = require("./routes/admin");
 const { courseRouter } = require("./routes/course");
 
 const app = express();
 app.use(express.json());
-
+app.get("/", (req, res) => {
+  res.send("Server is running successfully 🚀");
+});
 app.use("/api/v1/user", userRouter);
 app.use("/api/v1/admin", adminRouter);
 app.use("/api/v1/course", courseRouter);
